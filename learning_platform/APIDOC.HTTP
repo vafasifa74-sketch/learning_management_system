@@ -1,0 +1,30 @@
+#Register a trainer profile (createUser+trainerProfile)
+###
+POST http://127.0.0.1:8000/register/
+Content-Type: application/json
+
+{
+    "username": "trainer1",
+    "email": "trainer1@example.com",
+    "password": "password123",
+    "phone": "9876543210",
+    "role": "trainer",
+    "bio": "Senior Python Developer",
+    "expertise": "Django & REST APIs"
+    
+}
+
+# login with trainer Email or (username/phone)
+###
+POST http://127.0.0.1:8000/login/
+Content-Type: application/json
+
+{
+    "username":"trainer1",
+    "password":"password123"
+}
+
+#api call for viewing trainer profile
+###
+GET http://127.0.0.1:8000/profile/
+Authorization: Token 8231a173bfd346fd09235c401aeb48f346abceb6

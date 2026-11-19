@@ -1,5 +1,5 @@
 """
-URL configuration for devlms project.
+URL configuration for learning_platform project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/6.1/topics/http/urls/
@@ -16,7 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from accounts.views import RegisterView, LoginView, ProfileView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path("register/", RegisterView.as_view()),
+    path("login/", LoginView.as_view()),
+    path("profile/", ProfileView.as_view()),
+
 ]
